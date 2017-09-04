@@ -46,19 +46,19 @@ axes(hs(1))
     plot(Tint(Tint<500), logaeqint(Tint<500,sptoplot), 'k-', 'LineWidth', 0.5); hold on;
     plot(Tint(Tint>=500), logaeqint(Tint>=500,sptoplot), 'k--', 'LineWidth', 0.5); hold on;
     
-    plot(steamline(:,1), steamline(:,4), '-', 'Color', colors('Tufts Blue')); hold on;
-    plot([485; 485], [-10 4], '--', 'Color', colors('Gray'), 'LineWidth', 0.25); hold on;
+    plot(steamline(:,1), steamline(:,4), '-', 'Color', [0.280000 0.570000 0.810000]); hold on;
+    plot([485; 485], [-10 4], '--', 'Color', [0.500000 0.500000 0.500000], 'LineWidth', 0.25); hold on;
     plot([xl; xl]', [3 3; 3 3]', 'k:', 'LineWidth', 0.25); hold off
 
     for mm = 1:length(sptoplot)
         text(Tint(1), logaeqint(1,sptoplot(mm)), sp{sptoplot(mm)}, ...
             'HorizontalAlignment', 'right', 'VerticalAlignment', 'middle',...
-            'Color', colors('black'), 'FontSize', 6)
+            'Color', [0.000000 0.000000 0.000000], 'FontSize', 6)
     end
     
     ht = text(550,-3, 'graphite unstable', ...
         'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom',...
-        'Color', colors('Gray'), 'FontSize', 8)
+        'Color', [0.500000 0.500000 0.500000], 'FontSize', 8)
     set(ht, 'rotation', 90)
     
     ylabel('log \it{f}')
@@ -80,7 +80,7 @@ axes(hs(3))
     set(gca(), 'Visible', 'off')
     
 axes(hs(5))
-    plot(TPFMQ(:,1), TPFMQ(:,3), '-', 'Color', colors('Black'))
+    plot(TPFMQ(:,1), TPFMQ(:,3), '-', 'Color', [0.000000 0.000000 0.000000])
 
     ylabel('log {\it{f}}_{O_2}')
     xlabel(['Temperature, ' char(176) 'C'])
@@ -95,14 +95,14 @@ axes(hs(5))
     
 axes(hs(2))
     plot(Tint, CH4_CO2, 'k-'); hold on;
-    plot(Tint, CH4_H2O, '-', 'Color', colors('Gray')); hold off
+    plot(Tint, CH4_H2O, '-', 'Color', [0.500000 0.500000 0.500000]); hold off
     
     text(Tint(1)+10, CH4_CO2(1), 'log {\it{f}}_{CH_4}/{\it{f}}_{CO_2}', ...
         'HorizontalAlignment', 'left', 'VerticalAlignment', 'middle',...
-        'Color', colors('black'), 'FontSize', 6)
+        'Color', [0.000000 0.000000 0.000000], 'FontSize', 6)
     text(Tint(1)+10, CH4_H2O(1), 'log {\it{f}}_{CH_4}/{\it{f}}_{H_2O}', ...
         'HorizontalAlignment', 'right', 'VerticalAlignment', 'top',...
-        'Color', colors('gray'), 'FontSize', 6)
+        'Color', [0.500000 0.500000 0.500000], 'FontSize', 6)
     
     ylabel('log {\it{f}}/{\it{f}}')
     xlim(xl)

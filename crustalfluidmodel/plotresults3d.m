@@ -52,10 +52,10 @@ end
 for mm = 1:length(sptoplot)
     xloc = find(xi == max(xi(:,1)),1);
     yloc = find(yi == min(yi(1,:)),1);
-    plot3(xi(xloc,yloc), yi(xloc,yloc), zi(xloc, yloc, mm), 'o', 'Color', colors('gray'), 'MarkerSize', 4);
+    plot3(xi(xloc,yloc), yi(xloc,yloc), zi(xloc, yloc, mm), 'o', 'Color', [0.500000 0.500000 0.500000], 'MarkerSize', 4);
     text(xi(xloc,yloc)+5, yi(xloc,yloc)-1, zi(xloc, yloc, mm), sp{sptoplot(mm)}, ...
         'HorizontalAlignment', 'left', 'VerticalAlignment', 'middle',...
-        'Color', colors('gray'), 'FontSize', 8)
+        'Color', [0.500000 0.500000 0.500000], 'FontSize', 8)
 end
 
 hold off;
