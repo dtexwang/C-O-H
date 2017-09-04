@@ -1,6 +1,9 @@
 % plot results of calculations from crustalfluidmodel.R
 % 1000bar FMQ, graphite satureated
 
+strsplit = @(str,delim) regexp(str,regexptranslate('escape',delim),'split')
+% one-line replacement function for strsplit: https://stackoverflow.com/a/35325913
+
 %% Load Model OUtput
 
 fid = fopen('logaeq2e.csv');            % even numbered
@@ -65,7 +68,7 @@ axes(hs(1))
     xlim(xl)
     
 %     legend({sp{sptoplot}}, 'Location', 'best', 'FontSize', 6)
-    xticklabels([])
+    set(gca(),'XTickLabel',[])
     set(gca(),'TickLength',3*get(gca(),'TickLength'))
     set(gca(),'XMinorTick','on','YMinorTick','on')
     
@@ -107,7 +110,7 @@ axes(hs(2))
     ylabel('log {\it{f}}/{\it{f}}')
     xlim(xl)
     
-    xticklabels([])
+    set(gca(),'XTickLabel',[])
     
     set(gca(),'TickLength',3*get(gca(),'TickLength'))
     set(gca(),'XMinorTick','on','YMinorTick','on')
@@ -125,7 +128,7 @@ axes(hs(4))
     xlim(xl)
     ylim([2 5])
     
-    xticklabels([])
+    set(gca(),'XTickLabel',[])
     
     set(gca(),'TickLength',3*get(gca(),'TickLength'))
     set(gca(),'XMinorTick','on','YMinorTick','on')

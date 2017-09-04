@@ -1,5 +1,8 @@
 % plot results of calculations from crustalfluidmodel.R
 
+strsplit = @(str,delim) regexp(str,regexptranslate('escape',delim),'split')
+% one-line replacement function for strsplit: https://stackoverflow.com/a/35325913
+
 %% Load Model OUtput
 
 fid = fopen('logaeq2e.csv');            % even numbered
